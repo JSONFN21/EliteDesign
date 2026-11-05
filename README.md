@@ -152,10 +152,10 @@ depends on the target length and how often the argmax changes.
 
 The following saved runs used one server with 96 physical cores:
 
-| Method · Eterna100, all 100 puzzles | Samples / round | Seeds / puzzle | Total wall time | Mean final P ↑ | Mean final NED ↓ |
-| --- | ---: | ---: | ---: | ---: | ---: |
-| LazyOutside `1−NED` · main optimizer | 100 | 1 | **7.16 min** | **0.58473** | **0.034090** |
-| LP/Vienna `1−NED` · extras hybrid | 100 | 1 | 7.58 min | 0.58428 | 0.037733 |
+| Method · Eterna100, all 100 puzzles | Samples / round | Time per structure (s) |
+| --- | ---: | ---: |
+| EliteDesign (LazyOutside `1−NED`) | 100 | 4.21 |
+| EliteDesign (LazyOutside `1−NED`) | 500 | 11.99 |
 
 | Run setting | Value |
 | --- | --- |
@@ -167,8 +167,6 @@ The following saved runs used one server with 96 physical cores:
 | P/NED | Final Vienna checks |
 | Total wall time | All 100 puzzles, one seed each |
 
-The hybrid result comes from using Vienna on the elites during the search,
-with both runs using 100 samples per round instead of the default 500.
 These times will vary with the hardware and settings.
 
 ## Extras
