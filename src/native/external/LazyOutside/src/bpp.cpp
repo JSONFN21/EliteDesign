@@ -809,6 +809,7 @@ void BeamCKYParser::backward_update(int i, int j, State & state, Type type) {
     delta = state.alpha - saved_inside;
   else { // all pruned: use best hyperedge
     delta = state.alpha - best_inside;
+    if (!best_edge.left) return; // no hyperedge recorded: nothing to propagate
     saved_hedges.push_back(best_edge);
     pruned --; // one more edge recovered
   }
